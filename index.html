@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UBMC | United Baptist Missionary Convention</title>
+<style>
+  :root {
+    --navy: #1a2744;
+    --gold: #c9a44c;
+    --cream: #faf7f0;
+    --text: #2b2b2b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.6;
+  }
+  header {
+    background: var(--navy);
+    color: white;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  header h1 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
+  }
+  nav a:hover {
+    border-color: var(--gold);
+  }
+  .hero {
+    background: linear-gradient(rgba(26,39,68,0.75), rgba(26,39,68,0.75)), 
+                url('https://images.unsplash.com/photo-1438032005730-c779502df39b?w=1600') center/cover;
+    color: white;
+    text-align: center;
+    padding: 6rem 2rem;
+  }
+  .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+  section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+  section h3 {
+    color: var(--navy);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid var(--gold);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+  }
+  .events-list {
+    list-style: none;
+    margin-top: 1.5rem;
+  }
+  .events-list li {
+    background: white;
+    border-left: 4px solid var(--gold);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .events-list .date {
+    font-weight: bold;
+    color: var(--navy);
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+  footer {
+    background: var(--navy);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+  }
+  @media (max-width: 600px) {
+    header { flex-direction: column; gap: 1rem; text-align: center; }
+    .hero h2 { font-size: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>UBMC</h1>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="hero">
+  <h2>United Baptist Missionary Convention</h2>
+  <p>Building faith, community, and service together.</p>
+</div>
+
+<section id="about">
+  <h3>About Us</h3>
+  <p>Content coming soon. This is where the UBMC mission, history, and leadership will be introduced.</p>
+</section>
+
+<section id="events">
+  <h3>2026 Events Calendar</h3>
+  <ul class="events-list">
+    <li>
+      <span class="date">Placeholder Date</span>
+      Placeholder Event Name — replace this list with your actual 2026 calendar entries.
+    </li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h3>Contact</h3>
+  <p>Email: info@ubmcmd.com<br>Phone: (000) 000-0000</p>
+</section>
+
+<footer>
+  &copy; 2026 United Baptist Missionary Convention. All rights reserved.
+</footer>
+
+</body>
+</html>
