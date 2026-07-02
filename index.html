@@ -1,5 +1,10 @@
-// --- COMMON VISUAL STYLES (Used on all pages) ---
-const sharedStyles = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | UBMC of Maryland</title>
+<style>
   :root {
     --navy: #1a2744;
     --gold: #c9a44c;
@@ -70,17 +75,6 @@ const sharedStyles = `
   .dropdown:hover .dropdown-content { display: block; }
 
   .main-content { flex: 1; }
-  
-  /* HERO BANNER STYLES */
-  .hero {
-    background: linear-gradient(rgba(26,39,68,0.75), rgba(26,39,68,0.75)), 
-                url('https://images.unsplash.com/photo-1438032005730-c779502df39b?w=1600') center/cover;
-    color: white;
-    text-align: center;
-    padding: 6rem 2rem;
-  }
-  .hero h2 { font-size: 2.3rem; margin-bottom: 1rem; line-height: 1.3; }
-  .hero p { font-size: 1.1rem; max-width: 600px; margin: 1.5rem auto 0 auto; opacity: 0.9; }
 
   .page-title-banner {
     background: var(--navy);
@@ -101,7 +95,6 @@ const sharedStyles = `
   /* ADVANCED ABOUT US PAGE LAYOUT STYLES */
   .about-container { width: 100%; background: white; }
   
-  /* President Row Adjustments */
   .president-section { 
     background: #050b14; 
     color: white; 
@@ -136,7 +129,6 @@ const sharedStyles = `
   .president-bio { font-size: 1.1rem; line-height: 1.8; opacity: 0.85; }
 
   .more-about-banner {
-    /* UPDATED BACKGROUND WITH YOUR IMAGE LINK LINKED BELOW */
     background: linear-gradient(rgba(26,39,68,0.85), rgba(26,39,68,0.85)), 
                 url('https://i.postimg.cc/7hrwBqSw/IMG-6318.jpg') center/cover;
     color: white;
@@ -172,289 +164,148 @@ const sharedStyles = `
   .team-member h4 { font-size: 1.25rem; color: black; font-weight: bold; margin-bottom: 0.3rem; }
   .team-member p { font-size: 1rem; color: #666; font-style: italic; }
 
-  section { max-width: 1000px; margin: 0 auto; padding: 3rem 2rem; }
-  section h3 { color: var(--navy); font-size: 1.8rem; margin-bottom: 1rem; border-bottom: 3px solid var(--gold); display: inline-block; padding-bottom: 0.3rem; }
-  .content-box { background: white; padding: 2.5rem; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
   footer { background: var(--navy); color: white; text-align: center; padding: 2rem; margin-top: auto; font-size: 0.9rem; }
   
   @media (max-width: 768px) {
     header { display: flex; flex-direction: column; gap: 1rem; padding: 1.5rem; }
     .header-spacer { display: none; }
     nav ul { gap: 1.2rem; }
-    .hero h2 { font-size: 1.6rem; }
     .president-img-box { max-width: 100%; padding: 1rem; }
     .president-text-box { padding: 1.5rem; text-align: center; }
     .value-column { border-left: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 2rem; margin-bottom: 2rem; }
     .value-column:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
   }
-`;
-
-// --- TEMPLATE FUNCTION ---
-function renderPage(title, bodyContent) {
-  return `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${title} | UBMC of Maryland</title>
-<style>${sharedStyles}</style>
+</style>
 </head>
 <body>
   <header>
-    <a href="/" class="logo-link">
+    <a href="/index.html" class="logo-link">
       <img src="https://i.postimg.cc/RhSwnxq1/white-logo.png" alt="UBMC of Maryland Logo" class="header-logo">
     </a>
     <nav>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/about.html">About</a></li>
         <li class="dropdown">
           <button class="dropdown-btn">Auxiliaries ▾</button>
           <div class="dropdown-content">
-            <a href="/auxiliaries/women">Women Auxiliary</a>
-            <a href="/auxiliaries/laymen">Laymen's League</a>
-            <a href="/auxiliaries/generation-now">Generation Now</a>
-            <a href="/auxiliaries/bcce">BCCE</a>
+            <a href="/women.html">Women Auxiliary</a>
+            <a href="/laymen.html">Laymen's League</a>
+            <a href="/generation-now.html">Generation Now</a>
+            <a href="/bcce.html">BCCE</a>
           </div>
         </li>
-        <li><a href="/events">Events</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="/events.html">Events</a></li>
+        <li><a href="/contact.html">Contact</a></li>
       </ul>
     </nav>
     <div class="header-spacer"></div>
   </header>
 
   <div class="main-content">
-    ${bodyContent}
+    <div class="page-title-banner">
+       <div class="title-card">
+         <h2>UNITED BAPTIST MISSIONARY CONVENTION & Auxiliaries of the State of Maryland, Inc.</h2>
+       </div>
+     </div>
+     
+     <div class="about-container">
+       <div class="president-section">
+         <div class="president-img-box">
+           <img src="https://i.postimg.cc/YS47Mv34/MG-5133-(3).jpg" alt="Rev. Dr. Greggory R. Maddox" class="president-img">
+         </div>
+         <div class="president-text-box">
+           <div class="president-title">United Baptist Missionary Convention & Auxiliaries President,</div>
+           <h2 class="president-name">Rev. Dr. Greggory R. Maddox</h2>
+           <p class="president-bio">Rev. Dr. Greggory Roy Maddox, a native of Pontiac, Michigan, is a graduate of Virginia Union University, where he earned both his B.A. (1984) and Master of Divinity (1987). He serves as Pastor of Faith Baptist Church in Baltimore, Maryland since 1995 and earned his Doctor of Ministry degree in 2003. Pastor Maddox is married to Valorie Marie Thomas and is the father of two sons.</p>
+         </div>
+       </div>
+
+       <div class="more-about-banner">
+         <h2>More About Our President:</h2>
+         <div class="inner-border-box">
+           <p>Dr. Maddox has completed over 43 years in the Christian preaching ministry including 36 years in the pastoral ministry. Presently, he serves as the pastor of the Faith Baptist Church of Baltimore, MD where he has faithfully served since 1996. Dr. Maddox is a proven leader whose platform to RESTORE the UBMC is comprehensive, robust and attainable.</p>
+           <p>Pastor Maddox is married to the former Valorie Marie Thomas of Danville, Virginia and they are the parents of two children, Brice Greggory and Joshua Kyle.</p>
+         </div>
+       </div>
+
+       <div class="faith-hope-section">
+         <div class="faith-hope-card">
+           <div class="card-img-frame">
+             <img src="https://images.unsplash.com/photo-1544427928-c49cd1e4b30a?w=500" alt="Our Faith">
+           </div>
+           <h3>Our Faith</h3>
+           <p>We support the goals and challenges of our membership by providing meaningful involvement in all areas of humanity, Bible study, evangelism, education, and missions.</p>
+         </div>
+         <div class="faith-hope-card">
+           <div class="card-img-frame">
+             <img src="https://images.unsplash.com/photo-1438032005730-c779502df39b?w=500" alt="Our Hope">
+           </div>
+           <h3>Our Hope</h3>
+           <p>We offer our experience and willing volunteers to provide comprehensive solutions to meet the unique needs of every Maryland church and ministry. Join us today.</p>
+         </div>
+       </div>
+
+       <div class="values-section">
+         <h2>Our Shared Values:</h2>
+         <div class="values-grid">
+           <div class="value-column">
+             <h3>Integrity</h3>
+             <p>Maintain the highest standards of honesty, authenticity, and respect in all interactions.</p>
+           </div>
+           <div class="value-column">
+             <h3>People</h3>
+             <p>Know the difference between when to leverage technology and when to leverage people.</p>
+           </div>
+           <div class="value-column">
+             <h3>Trust</h3>
+             <p>Commit within our capabilities to ensure we gain the trust of our members and colleagues.</p>
+           </div>
+           <div class="value-column">
+             <h3>Teamwork</h3>
+             <p>Understand that teamwork, and diversity in thought and contribution are critical to our success.</p>
+           </div>
+         </div>
+       </div>
+
+       <div class="team-section">
+         <h2>UBMC Presidential Team:</h2>
+         <div class="team-grid">
+           <div class="team-member">
+             <div class="team-photo-box">
+               <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300" alt="Pastor Frank. J. Hines Jr." class="team-photo">
+             </div>
+             <h4>Pastor Frank J. Hines Jr.</h4>
+             <p>First Vice President</p>
+           </div>
+           <div class="team-member">
+             <div class="team-photo-box">
+               <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300" alt="Pastor M. Jamal Foster" class="team-photo">
+             </div>
+             <h4>Pastor M. Jamal Foster</h4>
+             <p>Second Vice President</p>
+           </div>
+           <div class="team-member">
+             <div class="team-photo-box">
+               <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300" alt="Pastor Quinton M. Herbert" class="team-photo">
+             </div>
+             <h4>Pastor Quinton M. Herbert</h4>
+             <p>Third Vice President</p>
+           </div>
+           <div class="team-member">
+             <div class="team-photo-box">
+               <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300" alt="Pastor Ayanna L. Franklin" class="team-photo">
+             </div>
+             <h4>Pastor Ayanna L. Franklin</h4>
+             <p>Executive Secretary</p>
+           </div>
+         </div>
+       </div>
+     </div>
   </div>
 
   <footer>
     &copy; 2026 United Baptist Missionary Convention & Auxiliaries of Maryland. All rights reserved.
   </footer>
 </body>
-</html>`;
-}
-
-// --- DEFINE THE PAGES ---
-
-const homePage = renderPage(
-  "Home", 
-  `<div class="hero">
-    <h2>The United Baptist Missionary Convention & Auxiliaries of the State of Maryland</h2>
-    <p>Building faith, community, and service together.</p>
-  </div>
-  <section>
-    <h3>Welcome</h3>
-    <p>Welcome to our official digital platform. Use the navigation menu above to explore our history, upcoming 2026 convention sessions, and our targeted auxiliary ministries.</p>
-  </section>`
-);
-
-const aboutPage = renderPage(
-  "About Us",
-  `<div class="page-title-banner">
-     <div class="title-card">
-       <h2>UNITED BAPTIST MISSIONARY CONVENTION & Auxiliaries of the State of Maryland, Inc.</h2>
-     </div>
-   </div>
-   
-   <div class="about-container">
-     <!-- PRESIDENT BIO ROW -->
-     <div class="president-section">
-       <div class="president-img-box">
-         <img src="https://i.postimg.cc/YS47Mv34/MG-5133-(3).jpg" alt="Rev. Dr. Greggory R. Maddox" class="president-img">
-       </div>
-       <div class="president-text-box">
-         <div class="president-title">United Baptist Missionary Convention & Auxiliaries President,</div>
-         <h2 class="president-name">Rev. Dr. Greggory R. Maddox</h2>
-         <p class="president-bio">Rev. Dr. Greggory Roy Maddox, a native of Pontiac, Michigan, is a graduate of Virginia Union University, where he earned both his B.A. (1984) and Master of Divinity (1987). He serves as Pastor of Faith Baptist Church in Baltimore, Maryland since 1995 and earned his Doctor of Ministry degree in 2003. Pastor Maddox is married to Valorie Marie Thomas and is the father of two sons.</p>
-       </div>
-     </div>
-
-     <!-- MORE ABOUT PRESIDENT BANNER -->
-     <div class="more-about-banner">
-       <h2>More About Our President:</h2>
-       <div class="inner-border-box">
-         <p>Dr. Maddox has completed over 43 years in the Christian preaching ministry including 36 years in the pastoral ministry. Presently, he serves as the pastor of the Faith Baptist Church of Baltimore, MD where he has faithfully served since 1996. Dr. Maddox is a proven leader whose platform to RESTORE the UBMC is comprehensive, robust and attainable.</p>
-         <p>Pastor Maddox is married to the former Valorie Marie Thomas of Danville, Virginia and they are the parents of two children, Brice Greggory and Joshua Kyle.</p>
-       </div>
-     </div>
-
-     <!-- FAITH AND HOPE SIDE BY SIDE CARDS -->
-     <div class="faith-hope-section">
-       <div class="faith-hope-card">
-         <div class="card-img-frame">
-           <img src="https://images.unsplash.com/photo-1544427928-c49cd1e4b30a?w=500" alt="Our Faith">
-         </div>
-         <h3>Our Faith</h3>
-         <p>We support the goals and challenges of our membership by providing meaningful involvement in all areas of humanity, Bible study, evangelism, education, and missions.</p>
-       </div>
-       <div class="faith-hope-card">
-         <div class="card-img-frame">
-           <img src="https://images.unsplash.com/photo-1438032005730-c779502df39b?w=500" alt="Our Hope">
-         </div>
-         <h3>Our Hope</h3>
-         <p>We offer our experience and willing volunteers to provide comprehensive solutions to meet the unique needs of every Maryland church and ministry. Join us today.</p>
-       </div>
-     </div>
-
-     <!-- VALUES ROW SECTION -->
-     <div class="values-section">
-       <h2>Our Shared Values:</h2>
-       <div class="values-grid">
-         <div class="value-column">
-           <h3>Integrity</h3>
-           <p>Maintain the highest standards of honesty, authenticity, and respect in all interactions.</p>
-         </div>
-         <div class="value-column">
-           <h3>People</h3>
-           <p>Know the difference between when to leverage technology and when to leverage people.</p>
-         </div>
-         <div class="value-column">
-           <h3>Trust</h3>
-           <p>Commit within our capabilities to ensure we gain the trust of our members and colleagues.</p>
-         </div>
-         <div class="value-column">
-           <h3>Teamwork</h3>
-           <p>Understand that teamwork, and diversity in thought and contribution are critical to our success.</p>
-         </div>
-       </div>
-     </div>
-
-     <!-- EXECUTIVE PRESIDENTIAL DIRECTIONAL TEAM -->
-     <div class="team-section">
-       <h2>UBMC Presidential Team:</h2>
-       <div class="team-grid">
-         <div class="team-member">
-           <div class="team-photo-box">
-             <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300" alt="Pastor Frank. J. Hines Jr." class="team-photo">
-           </div>
-           <h4>Pastor Frank J. Hines Jr.</h4>
-           <p>First Vice President</p>
-         </div>
-         <div class="team-member">
-           <div class="team-photo-box">
-             <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300" alt="Pastor M. Jamal Foster" class="team-photo">
-           </div>
-           <h4>Pastor M. Jamal Foster</h4>
-           <p>Second Vice President</p>
-         </div>
-         <div class="team-member">
-           <div class="team-photo-box">
-             <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300" alt="Pastor Quinton M. Herbert" class="team-photo">
-           </div>
-           <h4>Pastor Quinton M. Herbert</h4>
-           <p>Third Vice President</p>
-         </div>
-         <div class="team-member">
-           <div class="team-photo-box">
-             <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300" alt="Pastor Ayanna L. Franklin" class="team-photo">
-           </div>
-           <h4>Pastor Ayanna L. Franklin</h4>
-           <p>Executive Secretary</p>
-         </div>
-       </div>
-     </div>
-   </div>`
-);
-
-const womenPage = renderPage(
-  "Women Auxiliary",
-  `<div class="page-title-banner"><h2>Women Auxiliary</h2></div>
-  <section>
-    <div class="content-box">
-      <h3>Empowering Christian Women</h3>
-      <p>Welcome to the dedicated page for the Women Auxiliary. Content detailing upcoming fellowships, missionary circles, and state-wide service initiatives will appear here shortly.</p>
-    </div>
-  </section>`
-);
-
-const laymenPage = renderPage(
-  "Laymen's League",
-  `<div class="page-title-banner"><h2>Laymen's League</h2></div>
-  <section>
-    <div class="content-box">
-      <h3>Developing Spiritual Leadership</h3>
-      <p>Welcome to the Laymen's League webpage. This distinct space will host information regarding our men's brotherhood fellowships, community outreach, and mentorship programs across Maryland.</p>
-    </div>
-  </section>`
-);
-
-const genNowPage = renderPage(
-  "Generation Now",
-  `<div class="page-title-banner"><h2>Generation Now</h2></div>
-  <section>
-    <div class="content-box">
-      <h3>Youth & Young Adults</h3>
-      <p>Welcome to Generation Now. This page is dedicated to highlighting our vibrant youth and young adult conventions, contemporary worship fellowships, and dynamic service networks.</p>
-    </div>
-  </section>`
-);
-
-const bccePage = renderPage(
-  "BCCE",
-  `<div class="page-title-banner"><h2>BCCE</h2></div>
-  <section>
-    <div class="content-box" style="text-align: center;">
-      <img src="https://i.postimg.cc/RVxjyPyV/BCCE-Logo.png" alt="Baptist Convention Congress of Education Logo" style="max-width: 250px; width: 100%; height: auto; border-radius: 4px; margin-bottom: 2rem;">
-      <div style="text-align: left;">
-        <h3>Baptist Convention Congress of Education</h3>
-        <p>Welcome to the BCCE page. Content coming soon highlighting Christian education courses, leadership training schools, certificates, and academic assemblies for the convention.</p>
-      </div>
-    </div>
-  </section>`
-);
-
-const eventsPage = renderPage(
-  "Events Calendar",
-  `<div class="page-title-banner"><h2>Convention Calendar</h2></div>
-  <section>
-    <div class="content-box">
-      <h3>2026 Scheduled Sessions</h3>
-      <p>Our official lineup of events, board meetings, and annual convention schedules will be published here. Check back soon for updates.</p>
-    </div>
-  </section>`
-);
-
-const contactPage = renderPage(
-  "Contact",
-  `<div class="page-title-banner"><h2>Contact Us</h2></div>
-  <section>
-    <div class="content-box">
-      <h3>Get in Touch</h3>
-      <p style="font-size: 1.1rem; margin-bottom: 1rem;">We would love to hear from you. Please reach out via our official communication channels:</p>
-      <p><strong>Email:</strong> <a href="mailto:info@ubmcmd.com" style="color:var(--navy)">info@ubmcmd.com</a></p>
-      <p><strong>Phone:</strong> <a href="tel:0000000000" style="color:var(--navy)">(000) 000-0000</a></p>
-    </div>
-  </section>`
-);
-
-// --- THE TRAFFIC COP (Cloudflare Routing Logic) ---
-export default {
-  async fetch(request) {
-    const url = new URL(request.url);
-    const path = url.pathname;
-
-    if (path === "/" || path === "") {
-      return new Response(homePage, { headers: { "content-type": "text/html;charset=UTF-8" } });
-    } else if (path === "/about") {
-      return new Response(aboutPage, { headers: { "content-type": "text/html;charset=UTF-8" } });
-    } else if (path === "/auxiliaries/women") {
-      return new Response(womenPage, { headers: { "content-type": "text/html;charset=UTF-8" } });
-    } else if (path === "/auxiliaries/laymen") {
-      return new Response(laymenPage, { headers: { "content-type": "text/html;charset=UTF-8" } });
-    } else if (path === "/auxiliaries/generation-now") {
-      return new Response(genNowPage, { headers: { "content-type": "text/html;charset=UTF-8" } });
-    } else if (path === "/auxiliaries/bcce") {
-      return new Response(bccePage, { headers: { "content-type": "text/html;charset=UTF-8" } });
-    } else if (path === "/events") {
-      return new Response(eventsPage, { headers: { "content-type": "text/html;charset=UTF-8" } });
-    } else if (path === "/contact") {
-      return new Response(contactPage, { headers: { "content-type": "text/html;charset=UTF-8" } });
-    }
-
-    return new Response("<h1>404 Page Not Found</h1><p>Return to <a href='/'>Home</a></p>", {
-      status: 404,
-      headers: { "content-type": "text/html;charset=UTF-8" },
-    });
-  },
-};
+</html>
